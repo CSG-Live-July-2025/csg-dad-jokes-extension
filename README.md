@@ -8,8 +8,7 @@ A Chrome extension learning project for Code School of Guam students. Fetch dad 
 dad-jokes-extension/
   ├─ manifest.json               ← Extension configuration
   ├─ popup.html                  ← Popup UI
-  ├─ popup.js                    ← Main popup logic (uses dad jokes API)
-  ├─ popup-with-rails.js        ← Alternative version for custom Rails API
+  ├─ popup.js                    ← Main popup logic
   ├─ icon128.png                 ← Extension icon
   ├─ README.md                   ← Quick start guide (this file)
   └─ CHROME_EXTENSION_GUIDE.md  ← Full 90-minute teaching guide
@@ -48,10 +47,10 @@ dad-jokes-extension/
 
 ### Optional: Connect to Your Own Rails API (If You Want!)
 
-**Option 1: Quick Swap (Recommended for Testing)**
+If you build your own Rails API with custom content, switching is easy!
 
 1. Open `popup.js`
-2. Change the API_URL from:
+2. Change line 2 from:
    ```javascript
    const API_URL = "https://icanhazdadjoke.com/";
    ```
@@ -60,19 +59,7 @@ dad-jokes-extension/
    const API_URL = "http://localhost:3000/quotes/random";
    ```
 3. Go to **chrome://extensions** and click the **refresh icon** on your extension
-4. Test the extension again
-
-**Option 2: Use the Pre-Made Rails Version**
-
-1. In `popup.html`, change line 48 from:
-   ```html
-   <script src="popup.js"></script>
-   ```
-   to:
-   ```html
-   <script src="popup-with-rails.js"></script>
-   ```
-2. Go to **chrome://extensions** and click the **refresh icon**
+4. Click your extension → now it fetches from your Rails API!
 
 ### Optional: Build Your Own Rails API
 

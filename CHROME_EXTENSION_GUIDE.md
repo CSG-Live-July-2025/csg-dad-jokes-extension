@@ -14,7 +14,7 @@ A tiny extension with a toolbar button. Click it → a popup opens → it fetche
 ## 1) Create the project folder
 
 ```
-chrome-extension/
+dad-jokes-extension/
   ├─ manifest.json
   ├─ popup.html
   ├─ popup.js
@@ -118,51 +118,53 @@ chrome-extension/
 **popup.js**
 
 ```javascript
+// Where to fetch jokes from
 const API_URL = "https://icanhazdadjoke.com/";
 
+// Get elements from the page
 const btn = document.getElementById("fetchBtn");
 const result = document.getElementById("result");
 
-async function getQuote() {
+// Function to get a joke
+async function getJoke() {
+  // Show loading message
   result.textContent = "Loading...";
-  result.classList.add("loading");
-  result.classList.remove("muted");
   
   try {
-    const res = await fetch(API_URL, { 
-      headers: {
-        'Accept': 'application/json',
-        'User-Agent': 'CSG Dad Jokes Extension (https://github.com/codeSchoolGuam)'
-      },
-      cache: "no-store" 
+    // Fetch a joke from the API
+    const response = await fetch(API_URL, { 
+      headers: { 'Accept': 'application/json' }
     });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
+    const data = await response.json();
 
-    // icanhazdadjoke returns: { id, joke, status }
-    const content = data.joke;
-
-    result.innerHTML = `
-      <div><strong>${content}</strong></div>
-    `;
-    result.classList.remove("loading");
-  } catch (err) {
-    result.innerHTML = `<div style="color: #d32f2f;">Error: ${err.message}</div>`;
-    result.classList.remove("loading");
+    // Display the joke
+    result.innerHTML = `<div><strong>${data.joke}</strong></div>`;
+    
+  } catch (error) {
+    // Show error if something goes wrong
+    result.innerHTML = `<div style="color: red;">Oops! Couldn't load a joke.</div>`;
   }
 }
 
-btn.addEventListener("click", getQuote);
+// When button is clicked, get a joke
+btn.addEventListener("click", getJoke);
 ```
 
 **✅ About this API:**
 - **icanhazdadjoke.com** is a free dad joke API ([documentation](https://icanhazdadjoke.com/api))
 - No authentication required!
 - Returns JSON: `{ "id": "abc123", "joke": "...", "status": 200 }`
-- **Important:** Include the `Accept: application/json` header to get JSON (not HTML)
-- **Important:** Include a custom `User-Agent` header (good API citizenship!)
+- We use the `Accept: application/json` header to tell the API we want JSON (not HTML)
 
-**🔄 Optional:** If you want to build your own Rails API later, just change the URL to `http://localhost:3000/quotes/random`
+**🔄 To use your own Rails API later:**
+Just change line 2 to: `const API_URL = "http://localhost:3000/quotes/random";`
+
+**📝 What each part does:**
+- `async/await` - Modern way to handle waiting for API responses
+- `fetch()` - Built-in function to get data from URLs
+- `try/catch` - Handles errors if the API is down or something breaks
+- `.json()` - Converts the response into a JavaScript object
+- `data.joke` - Gets the joke text from the response
 
 ---
 
