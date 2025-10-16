@@ -97,11 +97,33 @@ You can create an API that returns:
 
 ## 💡 Next Steps (Pick What Interests You!)
 
-1. Style the popup with custom colors/fonts
-2. Add dark mode or animations
-3. Save the last 3 quotes using `chrome.storage.local`
-4. Add an options page to customize the API URL
-5. **Optional:** Build your own Rails API with custom content (see Section 6 in the guide)
+1. **Customize your icon** - Use ChatGPT, Gemini, or DALL-E to generate a unique icon!
+   - Prompt: "Create a simple, colorful icon for a dad jokes Chrome extension, 128x128 pixels"
+2. Style the popup with custom colors/fonts
+3. Add dark mode or animations
+4. Save the last 3 jokes using `chrome.storage.local`
+5. Add an options page to customize the API URL
+6. **Build your own Rails API** with custom content (see Section 6 in the guide)
+7. **Deploy to Chrome Web Store** - Share your extension with the world! (see Section 12 in the guide)
+
+## 🌐 Publishing Your Extension
+
+Want to share your extension with others?
+
+**Option 1: Chrome Web Store (Official)**
+- One-time $5 developer fee
+- Professional distribution
+- Automatic updates
+- Great for portfolio!
+- See Section 12 in `CHROME_EXTENSION_GUIDE.md` for full instructions
+
+**Option 2: Share Directly**
+- Package as `.crx` file
+- Share with friends/classmates
+- Free!
+- Chrome will show "unverified" warning but it works
+
+**💡 Pro tip:** Publishing to the Chrome Web Store is an awesome portfolio piece. You can say "I published a Chrome extension with X downloads!"
 
 ---
 

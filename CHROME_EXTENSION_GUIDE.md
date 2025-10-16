@@ -21,7 +21,12 @@ dad-jokes-extension/
   └─ icon128.png
 ```
 
-**📌 Getting an icon:** Download any 128×128 PNG image or use [placeholder.com/128](https://via.placeholder.com/128.png) and save it as `icon128.png`. Chrome will show a warning without an icon.
+**📌 Getting an icon:** 
+- **Option 1 (AI):** Use ChatGPT, Gemini, or DALL-E to generate a custom icon! 
+  - Prompt: "Create a simple, colorful icon for a dad jokes Chrome extension, 128x128 pixels"
+  - Download and save as `icon128.png`
+- **Option 2 (Placeholder):** Use [placeholder.com/128](https://via.placeholder.com/128.png) for now
+- **Note:** Chrome will show a warning without an icon, but the extension still works!
 
 ---
 
@@ -402,11 +407,102 @@ Reload the extension and visit any site → button appears in bottom-right → c
 
 ---
 
-## Resources
+## 12) Deploying to Chrome Web Store (Optional)
+
+Want to share your extension with the world? You can publish it to the Chrome Web Store!
+
+### Why publish?
+- 🌟 Share with friends and family
+- 📱 Users can install with one click
+- 💼 Great portfolio piece
+- 🎓 Learn the full developer workflow
+
+### Quick steps:
+
+**1. Prepare your extension**
+- ✅ Test thoroughly (no bugs!)
+- ✅ Create a nice icon (use AI to generate different sizes: 16x16, 48x48, 128x128)
+- ✅ Write a clear description
+- ✅ Take screenshots of your extension in action
+
+**2. Create a developer account**
+- Go to [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole)
+- Pay one-time $5 registration fee
+- Set up your developer profile
+
+**3. Prepare additional assets**
+- **Screenshots:** 1-5 screenshots (1280x800 or 640x400)
+- **Promotional images:** Small tile (440x280) - optional but recommended
+- **Description:** What does your extension do? Why is it useful/fun?
+- **Privacy policy:** If you collect any data (not needed for this simple extension)
+
+**4. Package your extension**
+- Zip your extension folder (manifest.json, popup.html, popup.js, icon128.png, etc.)
+- Or use Chrome's "Pack extension" feature in chrome://extensions
+
+**5. Upload to Chrome Web Store**
+- Click "New Item" in the developer dashboard
+- Upload your ZIP file
+- Fill out the store listing (title, description, category, etc.)
+- Upload screenshots and icons
+- Set visibility (Public, Unlisted, or Private)
+- Submit for review!
+
+**6. Wait for review**
+- Usually takes a few hours to a few days
+- Google reviews for policy violations, malware, etc.
+- You'll get an email when it's approved or needs changes
+
+### 📝 Store Listing Tips:
+
+**Good title:** "CSG Dad Jokes - Get Daily Laughs"  
+**Good description:**
+```
+Get a new dad joke with every click! 
+
+This simple extension brings you random dad jokes from the internet's 
+largest collection. Perfect for:
+- Quick laughs during study breaks
+- Sharing jokes with friends
+- Brightening your day
+
+Built by Code School of Guam students as a learning project.
+
+Features:
+• Clean, simple interface
+• New joke every time
+• No ads, no tracking
+• Works offline (once loaded)
+
+Enjoy the groans! 😄
+```
+
+**Categories:** Fun, Productivity, Social & Communication
+
+### 🚨 Important Notes:
+
+- **Permissions:** Only request what you need (we only need icanhazdadjoke.com access)
+- **Privacy:** If you add analytics or tracking later, you MUST disclose it
+- **Updates:** You can push updates anytime after initial approval
+- **Pricing:** Keep it free for your first extension!
+
+### Alternative: Share as .crx file
+
+Don't want to publish publicly? You can:
+1. Package your extension as a `.crx` file
+2. Share the file directly with friends
+3. They can drag-and-drop it into chrome://extensions
+4. ⚠️ Chrome will warn about "unverified" extensions, but it still works!
+
+---
+
+## 13) Resources
 
 - [Chrome Extension Docs](https://developer.chrome.com/docs/extensions/mv3/)
 - [Manifest V3 Migration Guide](https://developer.chrome.com/docs/extensions/mv3/intro/)
 - [chrome.storage API](https://developer.chrome.com/docs/extensions/reference/storage/)
+- [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole)
+- [Publishing Guidelines](https://developer.chrome.com/docs/webstore/publish/)
 - [Public APIs for testing](https://github.com/public-apis/public-apis)
 
 ---
