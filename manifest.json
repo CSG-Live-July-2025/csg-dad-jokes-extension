@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "CSG Dad Jokes",
+  "version": "0.1.0",
+  "description": "Get random dad jokes - a Chrome extension learning project.",
+  "action": {
+    "default_title": "Get a Dad Joke",
+    "default_popup": "popup.html"
+  },
+  "host_permissions": [
+    "http://localhost:3000/*",
+    "https://icanhazdadjoke.com/*"
+  ],
+  "icons": { 
+    "128": "icon128.png" 
+  }
+}
+
